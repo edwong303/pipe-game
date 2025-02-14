@@ -35,5 +35,5 @@ This is a **Pipe Game Helper**, an assisting tool allowing you to solve the [**P
 
 ## TODO  
 
-[ ] **Close loop detection**
-[ ] **Improve UI responsiveness**
+- **Close loop detection**
+- **Improve UI responsiveness**
