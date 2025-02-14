@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pipe Game Helper  
 
-## Getting Started
+This is a **Pipe Game Helper**, an assisting tool allowing you to solve the [**Pipe Game**](https://www.puzzle-pipes.com/) easily.  
 
-First, run the development server:
+## How to Start  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Install dependencies by running:  
+   ```sh
+   npm install
+   ```
+2. Start the application:  
+   ```sh
+   npm run dev
+   ```
+3. Open **DevTools** in the Pipe Game, then go to the **Console** tab.  
+4. Copy the code from `pipe.js`, paste it into the Console, and run it. You will see three variables generated.  
+5. Copy the generated text and overwrite content in `puzzles/pipe.ts`.  
+6. Refresh the page to see the updated puzzle.  
+7. If **wrap mode** is enabled, two arrows will appear at the bottom left. You can use these to shift the puzzle for better readability.  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to Play  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. The goal is to rotate the tiles on the grid so that all pipes are connected in a single group. **Closed loops are not allowed.** (Reference: [Puzzle Pipes](https://www.puzzle-pipes.com/))  
+2. **Click** a tile to rotate it.  
+3. **Right-click** a tile to lock it.  
+4. You win when **all pipes turn blue** and no closed loops are present.  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tile Representations  
 
-## Learn More
+- **Grey pipe**: Unconnected pipe  
+- **Blue pipe with a red dot at the center**: Source pipe  
+- **Blue pipe**: Connected pipe  
+- **Solid red pixel next to a pipe**: The pipe **must not** be rotated in that direction (e.g., connecting to an edge in non-wrapped mode).  
+- **Semi-transparent red pixel next to a pipe**: The neighboring tile is **locked**, making it impossible for the pipe to rotate in that direction.  
 
-To learn more about Next.js, take a look at the following resources:
+## TODO  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[ ] **Close loop detection**
+[ ] **Improve UI responsiveness**
